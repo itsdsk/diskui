@@ -1,0 +1,10 @@
+<div class="item" data-channel="{{channel_name}}">
+    <h1>{{channel_name}}</h1>
+    <p>Count: {{count}}</p>
+    {{#if create}}
+    <h2>+</h2>
+    <button class="newDiskButton">New</button>
+    {{else}}
+    <button class="viewChannelButton">View</button>
+    {{/if}}
+</div>

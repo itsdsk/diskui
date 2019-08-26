@@ -1,0 +1,54 @@
+<div id="outputForm">
+    <div class="window">
+        <label for="windowWidth">Width:</label>
+        <input type="number" id="windowWidth" rows="1" class="width" value="{{window.width}}">
+        <label for="windowHeight">Height:</label>
+        <input type="number" id="windowHeight" rows="1" class="height" value="{{window.height}}">
+    </div>
+    <div class="outputs">
+        {{#each outputs}}
+        <div data-output-id="{{index}}">
+            {{!-- <label for="o_device{{@index}}">Device:</label>
+            <textarea id="o_device{{@index}}" rows="1" class="device">{{device}}</textarea> --}}
+            {{!-- <label>{{device}}</label> --}}
+            <div class="properties">
+                <b>{{index}}:&emsp;</b>
+                <label for="o_port{{@index}}">Port:</label>
+                <textarea id="o_port{{@index}}" rows="1" class="port">{{properties.port}}</textarea>
+                <label for="o_type{{@index}}">Type:</label>
+                <textarea id="o_type{{@index}}" rows="1" class="type">{{properties.type}}</textarea>
+                <label for="o_color{{@index}}">Colour Order:</label>
+                <textarea id="o_color{{@index}}" rows="1" class="colorOrder">{{properties.colorOrder}}</textarea>
+                <label for="o_rate{{@index}}">Baud Rate:</label>
+                <input type="number" id="o_rate{{@index}}" rows="1" class="rate" value="{{properties.rate}}">
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    <button id="saveOutputButton">Save</button>
+    <button id="updateOutputButton">Update Output</button>
+    <button id="resetOutputButton">Reset</button>
+    <button id="takeScreenshotButton">Screenshot</button>
+    <button id="restartBackendButton">Restart backend</button>
+    <button id="restartRendererButton">Restart renderer</button>
+    <button id="getLogsButton">Get logs</button>
+    <button id="shutdownButton">Shutdown</button>
+    <button id="rebootButton">Reboot</button>
+    <br>
+    <label>Brightness
+        <input id="brightnessInput" type="range" min="0" max="255" step="1">
+    </label>
+    <label>Blur amount
+        <input class="blurAmount" type="range" min="1" max="48" step="1">
+    </label>
+    <button class="autoplayButton">Autoplay all</button>
+    <label>Minimum autoplay time (5 - 300s):
+        <input id="autoplayMinRange" type="range" min="5" max="300" step="1">
+    </label>
+    <label>Maximum autoplay time (5 - 300s):
+        <input id="autoplayMaxRange" type="range" min="5" max="300" step="1">
+    </label>
+    <label>Crossfade time (0 - 4500ms):
+        <input id="crossfadeRange" type="range" min="0" max="4500" step="100">
+    </label>
+</div>
